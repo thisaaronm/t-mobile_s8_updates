@@ -18,22 +18,24 @@ def get_update(response, page_content):
 
 def compare_updates(new, old=config.june):
     if new == old:
-        print('No changes detected.')
+        print('\nNo changes detected.')
         pass
     else:
         return True
 
 def send_email(message):
-  try:
-    server = smtplib.SMTP_SSL(host=config.smtp_srv, port=465)
-    server.ehlo()
-    server.login(user=config.from_email, password=config.passwd)
-    server.sendmail(from_addr=config.from_email, to_addrs=config.to_email, msg=message)
-    server.close()
-    print('\nEmail sent!')
-  except Exception as e:
-    print('\nError during send_email()...')
-    print(e)
+    try:
+        server = smtplib.SMTP_SSL(host=config.smtp_srv, port=465)
+        server.ehlo()
+        server.login(user=config.from_email, password=config.as_passwd)
+        server.sendmail(from_addr=config.from_email, to_addrs=config.to_email, msg=message)
+        server.close()
+        print('\nEmail sent!')
+    except KeyboardInterrupt as eki:
+        print('\nReceived CTRL+C.\nExiting...')
+    except Exception as e:
+        print('\nError during send_email()...')
+        print(e)
 
 def main():
     latest_update = get_update(resp, content)
