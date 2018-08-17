@@ -1,0 +1,5 @@
+*
+!.gitignore
+!README.md
+!s8_updates.py
+!config.py
