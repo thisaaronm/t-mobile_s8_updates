@@ -18,7 +18,7 @@ def get_update(response, page_content):
 
 def compare_updates(new, old=config.june):
     if new == old:
-        print('No changes detected.')
+        print('\nNo changes detected.')
         pass
     else:
         return True
