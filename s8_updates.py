@@ -12,15 +12,16 @@ content = resp.content.decode('utf-8')
 def get_update(response, page_content):
     if response.status_code == 200:
         for line in page_content.splitlines():
-            if 'June 17, 2018' in line:
+            if 'August 19, 2018' in line:
                 update = line[65:-63]
         return update
 
-def compare_updates(new, old=config.june):
+def compare_updates(new, old=config.august):
     if new == old:
         print('\nNo changes detected.')
         pass
     else:
+        print('\nChanges detected.')
         return True
 
 def send_email(message):
