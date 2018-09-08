@@ -45,6 +45,6 @@ Microsoft : https://support.microsoft.com/en-us/help/12409/microsoft-account-app
 Yahoo     : https://help.yahoo.com/kb/SLN15241.html (or switch to one of the above mail providers instead) =P  
 
 ## Questions?
-Feel free to contact me if you have questions. This was obviously done just for fun because I'm lazy, so I won't be putting that much more work into this than what I've already done. But if there's something obvious that needs to be addressed, I'll _possibly_ look into it.  
+Feel free to contact me if you have questions. This was obviously done just for fun because I'm lazy, so I won't be putting that much more work into this than what I've already done. I did just update it to check after the August 19, 2018 update. But if there's something obvious that needs to be addressed, I'll _possibly_ look into it.  
 
 And yes, I'm sure there are better ways to do this. Feel free to do it those ways if you want. =P 
