@@ -2,6 +2,7 @@
 
 import requests
 import smtplib
+import datetime
 import config
 
 
@@ -12,16 +13,16 @@ content = resp.content.decode('utf-8')
 def get_update(response, page_content):
     if response.status_code == 200:
         for line in page_content.splitlines():
-            if 'August 19, 2018' in line:
+            if 'August 31, 2018' in line:
                 update = line[65:-63]
         return update
 
-def compare_updates(new, old=config.august):
+def compare_updates(new, old=config.august31):
     if new == old:
-        print('\nNo changes detected.')
+        print('\n{}: No changes detected.'.format(datetime.datetime.now()))
         pass
     else:
-        print('\nChanges detected.')
+        print('\n{}: Changes detected.'.format(datetime.datetime.now()))
         return True
 
 def send_email(message):
