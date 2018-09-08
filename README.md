@@ -3,11 +3,13 @@
 ## Description
 Got tired of checking my wife's phone every night for software updates, so I wrote this to do it for me. 
 
-The last software update the T-Mobile S8 got was on August 19, 2018. This will check the T-Mobile software update page for the section that references that date - it is a single, ginormous string containing all the updates. When a new update arrives, they appear to update that section in a timely-ish manner.  
+The last software update the T-Mobile S8 received was on August 31, 2018. This will check the T-Mobile software update page for the section that references that date - it is a single, ginormous string containing all the updates. When a new update arrives, they appear to update that section in a timely manner.  
 
-The `config.py` contains that section, which hasn't changed since August. `s8_update.py` will pull that section from the live site, compare it against the August block from `config.py`, and if there's a change, it'll send an email. If not, then it'll just check again the next time it runs. If using **cron**, I recommend the following, hourly check:  
+The `config.py` contains that section, which hasn't changed since August. `s8_update.py` will pull that section from the live site, compare it against the `august31` var (the aforementioned block), and if there's a change, it'll send an email. If not, then it'll just check again the next time it runs. If using **cron**, I recommend the following, hourly check (with redirection to log):  
 
-`0 * * * * /path/to/t-mobile_s8_updates/s8_updates.py`  
+`0 * * * * /path/to/t-mobile_s8_updates/s8_updates.py >> /path/to/t-mobile_s8_updates/s8_updates.log`  
+
+This way, you have a log showing last run time and message, just in case for some reason the emails don't get fired off.   
 
 
 ## How To
