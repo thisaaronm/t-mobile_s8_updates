@@ -13,11 +13,11 @@ content = resp.content.decode('utf-8')
 def get_update(response, page_content):
     if response.status_code == 200:
         for line in page_content.splitlines():
-            if 'August 31, 2018' in line:
+            if config.date in line:
                 update = line[65:-63]
         return update
 
-def compare_updates(new, old=config.august31):
+def compare_updates(new, old=config.versions):
     if new == old:
         print('\n{}: No changes detected.'.format(datetime.datetime.now()))
         pass
