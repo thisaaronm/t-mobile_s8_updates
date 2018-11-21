@@ -17,7 +17,7 @@ def get_update(response, page_content):
                 update = line[65:-63]
         return update
 
-def compare_updates(new, old=config.august31):
+def compare_updates(new, old=config.versions):
     if new == old:
         print('\n{}: No changes detected.'.format(datetime.datetime.now()))
         pass
