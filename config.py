@@ -10,7 +10,7 @@ From: {0} <{1}>
 To: {2}
 Subject: {3}
 
-{0}
+{4}
 """.format(from_name, from_email, to_email, subject, body)
 url         = 'https://support.t-mobile.com/docs/DOC-34292'
 date        = 'October 28, 2018'
